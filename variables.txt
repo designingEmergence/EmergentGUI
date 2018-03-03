@@ -1,0 +1,17 @@
+else if (c == 'A'){text = "Scale";}
+else if (c == 'C'){text = "Clean";}
+else if (c == 'E'){text = "Extrude";}
+else if (c == 'H'){text = "Convex Hull";}
+else if (c == 'I'){text = "Inset Extrude";}
+else if (c == 'L'){text = "Slice";}
+else if (c == 'M'){text = "Smooth";}
+else if (c == 'P'){text = "Expand";}
+else if (c == 'R'){text = "Crocodile";}
+else if (c == 'S'){text = "Simplify";}
+else if (c == 'X'){text = "Twist X";}
+else if (c == 'Y'){text = "Twist Y";}
+else if (c == 'Z'){text = "Twist Z";}
+
+
+
+      
