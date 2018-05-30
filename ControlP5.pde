@@ -1,9 +1,12 @@
-void controlp5Setup() {
+void controlp5Setup() { // Add control buttons at bottom
+  
   cp5.addToggle("play")
     .setPosition(250, 750)
     .setSize(90, 25)
     .setId(0);
-  
+    
+//TODO Move label to center of button
+    
   cp5.addButton("Play Once")
     .setPosition(350, 750)
     .setSize(90, 25)
@@ -33,8 +36,8 @@ void controlp5Setup() {
   cp5.addSlider("changeColor", 0,260,25,850,750,190,25)
     .setId(6);
     
-  //List s = Arrays.asList(shapes);
-
+  
+  //Add dropdown list of shapes
   shapeList = cp5.addScrollableList("shapes")
     .setPosition(1150,  50)
     .setSize(200, 500)
@@ -43,6 +46,7 @@ void controlp5Setup() {
     .setId(2)
     .addItems(shapes);
 
+  //Add list of modifiers
   for (String mod: modifiers){
     int i = modifiers.indexOf(mod);
     cp5.addButton(mod)
@@ -52,7 +56,7 @@ void controlp5Setup() {
   }
 }
 
-void controlEvent(ControlEvent theEvent) {
+void controlEvent(ControlEvent theEvent) { //Logic controller for modifier buttons  
   switch(theEvent.getId()) {
     case(2): form.clearRules();break;
     case(3): HET_Export.saveToOBJ(form.mesh, sketchPath(),"Form/form.obj"); break;
@@ -79,6 +83,8 @@ void controlEvent(ControlEvent theEvent) {
     case(115):form.addModifier('B'); break;
   }
 }
+
+//Functions for buttons
 
 public void changeColor(float theValue){
   c = colorFromVal(theValue);

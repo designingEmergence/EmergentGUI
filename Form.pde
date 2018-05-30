@@ -1,5 +1,5 @@
-class Form{
-  
+class Form{ //Class for 3d shape
+ 
   HE_Mesh mesh;
   PShape shape;
   int numFaces;
@@ -10,7 +10,7 @@ class Form{
   WB_Point [] meshPoints;
   String text;
   
-  int limit = 5000;
+  int limit = 5000; //max number of faces before mesh simplifies
   
   int s = 0;
   int curState = 0;
@@ -70,7 +70,7 @@ class Form{
     s = todo.length()-1;
   }   
   
-  void calculate(){    
+  void calculate(){  //Check number of faces to prevent program from getting too big. If too big, then simplify the form using second ruleset    
       numFaces = mesh.getNumberOfFaces();
       prevState = curState;
       if(numFaces>limit){
@@ -107,8 +107,8 @@ class Form{
   }
       
   
-  void modify(char c){
-    
+  void modify(char c){ //Define modifiers
+    //TODO Refine Modifier variables.
     if (c == 'A'){
       println("scale");
       command = "Modifier: Scale";
@@ -189,7 +189,7 @@ class Form{
       println("smooth");
       command = "Modifier: Smooth";
       HEM_Smooth sm = new HEM_Smooth();
-      for (int i =0; i<10; i++){
+      for (int i =0; i<30; i++){
         mesh.modify(sm);
       }
     }
