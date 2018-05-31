@@ -12,6 +12,8 @@ Requirements:
   
 Files: 
 
+  NOTE: All files must live in a folder called EmergentHeMeshController
+  
   - Form: Folder containing exported .Obj files
   - Screenshots: Folder containing exported screenshots
   - EmergentHeMeshController.pde: Main project file
