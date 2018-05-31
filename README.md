@@ -27,6 +27,7 @@ Method:
   - You will see a sphere with a set of modifiers on the right
   - Click on a modifier to alter the form of the object
   - As you click, the list of modifiers used appears on the left
-  - Press space bar to iterate through the list and watch the object be modified
+  - Press space bar to iterate through the list and watch the object be modified continuously with the same modifiers. 
+  - If the object gets too complex, the app will simplify it to ensure things run smoothly
   - use the scroll wheel to zoom in and out 
-  - You can save the form/screenshot using the controls at the bottom. 
+  - You can save the form/screenshot using the controls at the bottom or by right clicking. 

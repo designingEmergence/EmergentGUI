@@ -18,7 +18,7 @@ HEC_Creator creator;
 
 boolean play;
 boolean playOnce;
-Rule[] ruleset;
+Rule [] ruleset;
 List<String> shapes = new ArrayList<String>();
 List<String> modifiers = new ArrayList<String>();
 
@@ -126,8 +126,6 @@ void makeCreatorsModifiers() {
   modifiers.add("Twist Y");
   modifiers.add("Twist Z");
   modifiers.add("Skew");
-  modifiers.add("Chamfer");
-  modifiers.add("Bend");
 }
 
 color colorFromVal(float v) {

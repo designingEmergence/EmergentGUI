@@ -7,7 +7,7 @@ class Form{ //Class for 3d shape
   Rule [] ruleset;
   String todo;
   String command;
-  WB_Point [] meshPoints;
+  float [][] meshPoints;
   String text;
   
   int limit = 5000; //max number of faces before mesh simplifies
@@ -51,7 +51,6 @@ class Form{ //Class for 3d shape
       else if (c == 'L'){text = "Slice";}
       else if (c == 'H'){text = "Convex Hull";} 
       else if (c == 'K'){text = "Skew";}
-      else if (c == 'B'){text = "Bend";}
       if(i == s){fill(#B70F0F);}
       else {fill(#767575);}
       textSize(12);
@@ -140,7 +139,7 @@ class Form{ //Class for 3d shape
       mesh.modify(extrude);
       HE_Selection sel = extrude.extruded;
       extrude = new HEM_Extrude().setDistance(-40);
-      mesh.modifySelected(extrude, sel);      
+      mesh.modify(extrude);      
     }
     else if(c == 'I'){
       println("extrude");
@@ -149,7 +148,7 @@ class Form{ //Class for 3d shape
       mesh.modify(extrude);
       HE_Selection sel = extrude.extruded;
       extrude = new HEM_Extrude().setDistance(-40);
-      mesh.modifySelected(extrude, sel);
+      mesh.modify(extrude);
       
     }
     else if(c == 'P'){
@@ -196,7 +195,7 @@ class Form{ //Class for 3d shape
     else if(c == 'S'){
       println("simplify");
       command = "Modifier: Simplify";
-      mesh.simplify(new HES_TriDec().setGoal(limit/4));
+      mesh.simplify(new HES_TriDec().setGoal(0.7));
     }
     else if(c == 'L'){
       println("slice");
@@ -205,7 +204,7 @@ class Form{ //Class for 3d shape
       slice.setPlane(0,0,0,0,1,0);
       slice.setOffset(0);
       slice.setCap(true);
-      slice.setKeepCenter(false);
+      //slice.setKeepCenter(false);
       slice.setReverse(false);
       mesh.modify(slice);
       mesh.triangulate();
@@ -213,8 +212,8 @@ class Form{ //Class for 3d shape
 
     else if(c == 'H'){
       println("ConvexHull");
-      command = "Simplify: Convex Hull";
-      meshPoints = mesh.getVerticesAsNewPoint();
+      command = "Simplify: Convex Hull";      
+      meshPoints = mesh.getVerticesAsFloat();
       HEC_ConvexHull cHull = new HEC_ConvexHull();
       cHull.setPoints(meshPoints);
       cHull.setN(5);

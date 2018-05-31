@@ -79,8 +79,6 @@ void controlEvent(ControlEvent theEvent) { //Logic controller for modifier butto
     case(111):form.addModifier('Y'); break;
     case(112):form.addModifier('Z'); break;
     case(113):form.addModifier('K'); break;
-    case(114):form.addModifier('F'); break;
-    case(115):form.addModifier('B'); break;
   }
 }
 
